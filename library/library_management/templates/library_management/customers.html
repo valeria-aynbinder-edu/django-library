@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customers</title>
+</head>
+<body>
+    <h2>Customers list</h2>
+
+    <ul>
+    {% for customer in customers %}
+        <li>
+            <a href="{% url 'customer_details' customer.id %}">Name: {{ customer.first_name }} {{ customer.last_name }} </a>
+            <p>Birth date: {{ customer.birth_date }} </p>
+        </li>
+    {% endfor %}
+    </ul>
+
+    <button onclick="location.href = '{% url 'add_customer' %}' ">Add new customer</button>
+</body>
+</html>

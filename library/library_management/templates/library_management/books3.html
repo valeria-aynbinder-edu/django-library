@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library - Books</title>
+</head>
+
+
+<body>
+
+    <h2>Books:</h2>
+
+    <ul>
+        {% for book_key, book_value in books %}
+            <li><a href="{% url 'book_by_name' book_key %}">{{ book_value.name }} by {{ book_value.author }}</a></li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>

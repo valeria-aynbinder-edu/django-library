@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block page_title%} Library {% endblock %}</title>
+    <link href="{% static 'library_management/styles.css' %}" rel="stylesheet">
+</head>
+<body>
+
+    <div>
+        <img src="{% static 'library_management/img/lib.png' %}"
+             alt="Library Image" style="height: 50px"
+        >
+        <h1>{% block page_name%} Welcome to the Library {% endblock %}</h1>
+        <br>
+    </div>
+
+    {% block content_block %}
+    {% endblock %}
+
+</body>
+</html>

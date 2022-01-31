@@ -1,0 +1,19 @@
+{% extends "library_management/base.html" %}
+
+{% block page_title %}
+    Books
+{% endblock %}
+
+{% block page_name %}
+Books
+{% endblock %}
+
+{% block content_block %}
+<br>
+<ul>
+    {% for book_key, book_value in books %}
+    <li><a href="{% url 'book_by_name' book_key %}">{{ book_value.name }} by {{ book_value.author }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
+
